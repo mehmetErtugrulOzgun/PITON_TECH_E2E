@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="15" time="11.843">
+    <testcase classname="Login Module" name="TestCase1 - User should see login form if not authenticated. Login Form should contain username password and login button" time="2.905">
+        <system-out>
+            <![CDATA[When Kullanici "testUrl" sayfasina gider....................................passed
+Then Kullanici kullaniciAdi butonunu goruyor mu.............................passed
+Then Kullanici sifre butonunu goruyor mu....................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Login Module" name="TestCase2 – User should see validation errors if click the login button without fill the login form" time="0.41">
+        <system-out>
+            <![CDATA[And Kullanici loginButon basar..............................................passed
+And Kullanici kullaniciAdiHata goruyor mu...................................passed
+And Kullanici sifreHata goruyor mu..........................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Login Module" name="TestCase3 – User should navigate to the dashboard and see welcome message if authenticate successfully" time="0.843">
+        <system-out>
+            <![CDATA[Then Kullanici kullaniciAdi kismina tiklar..................................passed
+Then Kullanici kullaniciAdi kismina "automationtest" girer..................passed
+Then Kullanici sifre kismina tiklar.........................................passed
+Then Kullanici sifre kismina "123456789" girer..............................passed
+And Kullanici loginButon basar..............................................passed
+And Kullanici basariyla giris yaparsa karsilama mesajini gorur..............passed
+And Kullanici tarayiciyi kapatir............................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Event Module" name="Test Case 1 - User should view create event form if click the Create Event button on dashboard" time="1.96">
+        <system-out>
+            <![CDATA[When Kullanici "testUrl" sayfasina gider....................................passed
+Then Kullanici kullaniciAdi kismina tiklar..................................passed
+Then Kullanici kullaniciAdi kismina "automationtest" girer..................passed
+Then Kullanici sifre kismina tiklar.........................................passed
+Then Kullanici sifre kismina "123456789" girer..............................passed
+And Kullanici loginButon basar..............................................passed
+Then Kullanici createEvent butonuna basar...................................passed
+Then Kullanici createEvent dashboard da createNewEvent butonu gozukuyor mu..passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Event Module" name="Test Case 2 – User should view validation errors if click the Create Event button without fill the event form" time="0.175">
+        <system-out>
+            <![CDATA[Then Kullanici createNewEvent butonuna basar................................passed
+Then Kullanici eventNameHata yazisini aldi mi...............................passed
+Then Kullanici eventDateHata yazisini aldi mi...............................passed
+Then Kullanici firstNameHata yazisini aldi mi...............................passed
+Then Kullanici lastNameHata yazisini aldi mi................................passed
+Then Kullanici contactHata yazisini aldi mi.................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Event Module" name="Test Case 3 – User should be able to add new participant when click the Add Participant button" time="0.07">
+        <system-out>
+            <![CDATA[Then Kullanici addParticipant butonuna basar................................passed
+Then Kullanici tabloda ikinci kisinin gozukup gozukmedigini kontrol eder....passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Event Module" name="Test Case 4 – User should view error message if removes all participants" time="0.096">
+        <system-out>
+            <![CDATA[Then Kullanici pleaseAddParticiant! yazisini gorene kadar kullanicilari silmelidir.passed
+Then Kullanici tum kullanicilari sildikten sonra pleaseAddParticiant! yazisini gormelidir.passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Event Module" name="Test Case 5 – User should be able to create new event if fills all required fields and redirect to dashboard" time="0.252">
+        <system-out>
+            <![CDATA[Then Kullanici eventName yerine etkinlik ismi girer.........................passed
+Then Kullanici eventDate tarih secer........................................passed
+Then Kullanici createNewEvent butonuna basar................................passed
+Then Kullanici basarili bir sekilde olusturdugunun yazisini alir............passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Event Module" name="Test Case 6 – User should be able to edit event. When user click the edit" time="0.11">
+        <system-out>
+            <![CDATA[Then Kullanici eventDuzenlemeButonuna basar.................................passed
+Then Kullanici eventDescription kismini doldurur............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Event Module" name="Test Case 7 - User should be able to update event if required fields filled and" time="0.678">
+        <system-out>
+            <![CDATA[Then Kullanici updateEvent butonuna basar...................................passed
+Then Kullanici basarili bir sekilde update ettiginin yazisini alir..........passed
+And Kullanici tarayiciyi kapatir............................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Dashboard Module" name="Test Case 1 – User should view dashboard if authenticated" time="1.916">
+        <system-out>
+            <![CDATA[When Kullanici "testUrl" sayfasina gider....................................passed
+Then Kullanici kullaniciAdi kismina tiklar..................................passed
+Then Kullanici kullaniciAdi kismina "automationtest" girer..................passed
+Then Kullanici sifre kismina tiklar.........................................passed
+Then Kullanici sifre kismina "123456789" girer..............................passed
+And Kullanici loginButon basar..............................................passed
+And Kullanici dogru girdigi zaman dashboard gorebilmelidir..................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Dashboard Module" name="Test Case 3 – User should view list of events if any event created otherwise" time="1.16">
+        <system-out>
+            <![CDATA[Then Kullanici kayitli bir olayin bulunmadigini belirten yaziyi gorur.......passed
+Then Kullanici createEvent butonuna basar...................................passed
+Then Kullanici eventName yerine etkinlik ismi girer.........................passed
+Then Kullanici eventDescription kismini doldurur............................passed
+Then Kullanici eventDate tarih secer........................................passed
+Then Kullanici firstName kismini doldurur...................................passed
+Then Kullanici lastName kismini doldurur....................................passed
+Then Kullanici contact kismini doldurur.....................................passed
+Then Kullanici createNewEvent butonuna basar................................passed
+Then Kullanici createEvent butonuna basar...................................passed
+Then Kullanici eventName yerine etkinlik ismi girer.........................passed
+Then Kullanici eventDescription kismini doldurur............................passed
+Then Kullanici eventDate tarih secer........................................passed
+Then Kullanici firstName kismini doldurur...................................passed
+Then Kullanici lastName kismini doldurur....................................passed
+Then Kullanici contact kismini doldurur.....................................passed
+Then Kullanici createNewEvent butonuna basar................................passed
+Then Kullanici eger olusturulan bir olay varsa onu gorur....................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Dashboard Module" name="Test Case 4 – User should be able navigate edit event when click the edit" time="0.25">
+        <system-out>
+            <![CDATA[Then Kullanici eventDuzenlemeButonuna basar.................................passed
+Then Kullanici gorunurde ki tum fonksiyonları yapabilmelidir................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Dashboard Module" name="Test Case 5 – User should be able to delete event when click the delete" time="0.088">
+        <system-out>
+            <![CDATA[Then Kullanici eventSil butonuna basar......................................passed
+Then Kullanici kayitli bir olayin bulunmadigini belirten yaziyi gorur.......passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Dashboard Module" name="Test Case 6 – User should be able to view event participants" time="0.684">
+        <system-out>
+            <![CDATA[Then Kullanici katilimciButonuna basar......................................passed
+Then Kullanici etkinlikte ki kullanicilari gorur............................passed
+And Kullanici tarayiciyi kapatir............................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
